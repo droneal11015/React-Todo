@@ -3,11 +3,12 @@ import React from "react";
 const TodoForm = props => {
     return (
         <form>
-            <inputonChange={props.handleTodoChange}
+            <input
+            onChange={props.handleTodoChange}
             type="text"
             name="todo"
             value={props.value}
-            placeholder="...todo"
+            placeholder="To Do..."
             />
             <button onClick={props.handleAddTodo}>Add to list</button>
             <button onClick={props.handleClearTodos}>Clear completed</button>
