@@ -60,10 +60,10 @@ class App extends React.Component {
 
   addTodo = event => {
     event.preventDefault();
-    const newTodo = {task: this.state.todolist, completed: false, id: Date.now()};
+    const newTodo = {task: this.state.todos, completed: false, id: Date.now()};
     this.setState({
       todolist: [...this.state.todolist, newTodo],
-      todo: ''
+      todos: ''
     });
   }
 
@@ -93,12 +93,12 @@ class App extends React.Component {
     return (
       <div>
         <TodoList
-          handleToggleComplete={this.toglleTodoComplete}
+          handleToggleComplete={this.toggleTodoComplete}
           todolist={this.state.todolist}
         />
 
         <TodoForm
-          value={this.state.todo}
+          value={this.state.todos}
           handleTodoChange={this.changeTodo}
           handleAddTodo={this.addTodo}
           handleClearTodolist={this.clearCompletedTodolist}
