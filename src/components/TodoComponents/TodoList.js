@@ -6,7 +6,7 @@ import Todo from './Todo';
 
 const TodoList = props => {
     return (
-        <div>
+        <div className="todo-list">
             {props.todolist.map(todo => (
                 <Todo
                     handleToggleComplete={props.handleToggleComplete}
