@@ -3,6 +3,8 @@ import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
 import './components/TodoComponents/Todo.css';
 
+//SITE IS DEPLOYED AT 
+// priceless-visvesvaraya-0f7704.netlify.com or danioneal.dev through netlify
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
