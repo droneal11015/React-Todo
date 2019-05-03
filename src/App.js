@@ -57,30 +57,55 @@ class App extends React.Component {
     };
   }
 
-  toggleItem = itemId => {
+
+  addTodo = event => {
+    event.preventDefault();
+    const newTodo = {task: this.state.todolist, completed: false, id: Date.now()};
     this.setState({
-      todolist: this.state.todolist.map(item => {
-        if (itemId === item.id) {
-          return {
-            ...item,
-            completed: !item.completed
-          };
-        } else {
-          return item;
-        }
-      })
+      todolist: [...this.state.todolist, newTodo],
+      todo: ''
     });
+  }
+
+  changeTodo = event => this.setState({[event.target.name]: event.target.value});
+
+  toggleTodoComplete = id => {
+    let todolist = this.state.todolist.slice();
+    todolist = todolist.map(todo => {
+      if (todo.id === id) {
+        todo.completed = !todo.completed;
+        return todo;
+      }
+      else {
+        return todo;
+      }
+    });
+    this.setState({todolist});
   };
 
+  clearCompletedTodolist = event => {
+    event.preventDefault();
+    let todolist = this.state.todolist.filter(todo => !todo.completed);
+    this.setState({todolist});
+  };
 
-addTodo = event => {
-  event.preventDefault();
-  const newTodo = {task: this.state.todolist, completed: false, id: Date.now()};
-  this.setState({
-    todolist: [...this.state.todolist, newTodo],
-    todo: ''
-  });
-}
+  render() {
+    return (
+      <div>
+        <TodoList
+          handleToggleComplete={this.toglleTodoComplete}
+          todolist={this.state.todolist}
+        />
+
+        <TodoForm
+          value={this.state.todo}
+          handleTodoChange={this.changeTodo}
+          handleAddTodo={this.addTodo}
+          handleClearTodolist={this.clearCompletedTodolist}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;
