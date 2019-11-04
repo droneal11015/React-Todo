@@ -7,7 +7,7 @@ body {
 }
 
 body {
-  background-color: lightseagreen;
+  background-color: #D9D8D4;
 }
 
 h1,
@@ -28,6 +28,8 @@ span {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #175173;
+
   }
 
 .todo-list{
@@ -39,7 +41,7 @@ span {
   }
 
   .item {
-    background-color: #e64944;
+    background-color: #175173;
     border: 2px solid black;
     display: flex;
     justify-content: space-around;
@@ -55,19 +57,19 @@ form {
     justify-content: center;
   }
   form > input {
-    background-color: lightyellow;
+    background-color: #E2EAE3;
     border: 0;
     padding: 6px 0;
     font-size: 1rem;
     width: 240px;
     outline: 0;
-    color: #e64944;
+    color: #175173;
     border: 2px solid black;
     margin: 15px;
   }
   
   button {
-    background-color: #e64944;
+    background-color: #6A9BA0;
     border: 2px solid black;
     color: white;
     font-size: 16px;
@@ -76,6 +78,6 @@ form {
   }
   
   input::placeholder {
-    color: #e64944;
+    color: #3C808F;
     opacity: 2;
   }
